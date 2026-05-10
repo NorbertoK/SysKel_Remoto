@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns="http://tempuri.org/DsRep_IVAVentasAfiliados.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+           xmlns:mstns="http://tempuri.org/DsRep_IVAVentasAfiliados.xsd" attributeFormDefault="qualified"
+           elementFormDefault="qualified" targetNamespace="http://tempuri.org/DsRep_IVAVentasAfiliados.xsd"
+           id="DsRepIVAVentasAfiliados" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="DsRepIVAVentasAfiliados">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ComprobantesIVAVentasAfiliados">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Comprobante">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="14" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Fecha" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Cliente">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="151" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Total" type="xs:decimal" />
+              <xs:element name="catIVA">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="CUIT">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Tipo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="NoGravado" type="xs:decimal" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Gravado" type="xs:decimal" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="IVA" type="xs:decimal" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Exento" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Encriptador">
+</Property><Property Name="Solution File" Value="D:\SysKel\Encriptador\Encriptador.sln">
+</Property><Property Name="Date" Value="domingo, 18 de marzo de 2012">
+</Property><Property Name="Time" Value="16:38 p.m.">
+</Property></Properties><Event ErrorLevel="0" Project="Encriptador" Source="Encriptador\Encriptador.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Encriptador" Source="Encriptador\Encriptador.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="TripleDESEncriptor" Source="TripleDESEncriptor\TripleDESEncriptor.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="TripleDESEncriptor" Source="TripleDESEncriptor\TripleDESEncriptor.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Encriptador.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Encriptador.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Encriptador" Source="Encriptador\Encriptador.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="TripleDESEncriptor" Source="TripleDESEncriptor\TripleDESEncriptor.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns="http://tempuri.org/DsPrestacionesResumen.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+           xmlns:mstns="http://tempuri.org/DsPrestacionesResumen.xsd" attributeFormDefault="qualified"
+           elementFormDefault="qualified" targetNamespace="http://tempuri.org/DsPrestacionesResumen.xsd"
+           id="DsPrestacionesResumen" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="DsPrestacionesResumen">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="PrestacionesResumen">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idPrestacion" type="xs:int" />
+              <xs:element minOccurs="0" name="Numero">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Estado" type="xs:int" />
+              <xs:element minOccurs="0" name="Direccion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Edad">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Recurso">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Jerarquia" type="xs:short" />
+              <xs:element minOccurs="0" name="Motivos">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="TiempoDeLlegada" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="Agendada" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="AlertaProgramadaNoSalio" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="Constraint1">
+      <xs:selector xpath=".//mstns:PrestacionesResumen" />
+      <xs:field xpath="mstns:idPrestacion" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

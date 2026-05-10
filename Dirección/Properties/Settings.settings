@@ -1,0 +1,20 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)"
+              GeneratedClassNamespace="Dirección.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Empresa" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SAE</Value>
+    </Setting>
+    <Setting Name="Local_Service" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://localhost/SysKel/Service.asmx</Value>
+    </Setting>
+    <Setting Name="Aymed_Service" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://aym01.aymed.local/syskel/service.asmx</Value>
+    </Setting>
+    <Setting Name="Dirección_WS_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/SysKel/Service.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://tempuri.org/DsCambiosDeCobrador.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:mstns="http://tempuri.org/DsCambiosDeCobrador.xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://tempuri.org/DsCambiosDeCobrador.xsd" id="DsCambiosDeCobrador" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="DsCambiosDeCobrador">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CambiosDeCobrador">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idCambioDeCobrador" type="xs:int" />
+              <xs:element name="Fecha" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="idCobrador1" type="xs:int" />
+              <xs:element name="idCobrador2" type="xs:int" />
+              <xs:element minOccurs="0" name="Motivo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idZona" type="xs:int" />
+              <xs:element minOccurs="0" name="idGrabador" type="xs:int" />
+              <xs:element minOccurs="0" name="CambiarFuturo" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ComprobantesCambioDeCobrador">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idComprobantesCambioDeCobrador" type="xs:int" />
+              <xs:element name="idCambioDeCobrador" type="xs:int" />
+              <xs:element name="idComprobante" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="Constraint1">
+      <xs:selector xpath=".//mstns:CambiosDeCobrador" />
+      <xs:field xpath="mstns:idCambioDeCobrador" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="ComprobantesCambioDeCobrador_Constraint1">
+      <xs:selector xpath=".//mstns:ComprobantesCambioDeCobrador" />
+      <xs:field xpath="mstns:idComprobantesCambioDeCobrador" />
+    </xs:unique>
+    <xs:keyref msdata:DeleteRule="None" name="FK_ComprobantesCambioDeCobrador_CambiosDeCobrador" refer="mstns:Constraint1">
+      <xs:selector xpath=".//mstns:ComprobantesCambioDeCobrador" />
+      <xs:field xpath="mstns:idCambioDeCobrador" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>

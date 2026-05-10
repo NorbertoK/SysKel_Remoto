@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns="http://tempuri.org/DsEntidadesDeCobranza.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+           xmlns:mstns="http://tempuri.org/DsEntidadesDeCobranza.xsd" attributeFormDefault="qualified"
+           elementFormDefault="qualified" targetNamespace="http://tempuri.org/DsEntidadesDeCobranza.xsd"
+           id="DsEntidadesDeCobranza" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="DsEntidadesDeCobranza">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EntidadesDeCobranza">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1"
+                          msdata:AutoIncrementStep="-1" name="idEntidadDeCobranza" type="xs:int" />
+              <xs:element name="Nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Iniciales">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="MascaraTarjeta">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="RequiereNumero" type="xs:boolean" />
+              <xs:element minOccurs="0" name="RequiereVencimiento" type="xs:boolean" />
+              <xs:element minOccurs="0" name="RequiereNombreTitular" type="xs:boolean" />
+              <xs:element minOccurs="0" name="RequiereDocTitular" type="xs:boolean" />
+              <xs:element minOccurs="0" name="RequiereTelTitular" type="xs:boolean" />
+              <xs:element minOccurs="0" name="NumeroDeCliente">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="RequiereConvenio" type="xs:boolean" />
+              <xs:element minOccurs="0" name="RequiereSucursal" type="xs:boolean" />
+              <xs:element minOccurs="0" name="RequiereEmpresa" type="xs:boolean" />
+              <xs:element minOccurs="0" name="RequiereJubilado" type="xs:boolean" />
+              <xs:element minOccurs="0" name="idBanco" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="Constraint1">
+      <xs:selector xpath=".//mstns:EntidadesDeCobranza" />
+      <xs:field xpath="mstns:idEntidadDeCobranza" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

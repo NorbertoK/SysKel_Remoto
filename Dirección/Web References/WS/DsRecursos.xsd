@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns="http://tempuri.org/DsRecursos.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+           xmlns:mstns="http://tempuri.org/DsRecursos.xsd" attributeFormDefault="qualified"
+           elementFormDefault="qualified" targetNamespace="http://tempuri.org/DsRecursos.xsd" id="DsRecursos"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="DsRecursos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Recursos">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1"
+                          msdata:AutoIncrementStep="-1" name="idRecurso" type="xs:int" />
+              <xs:element name="Nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idMovil" type="xs:int" />
+              <xs:element minOccurs="0" name="idMedico" type="xs:int" />
+              <xs:element minOccurs="0" name="idMedico2" type="xs:int" />
+              <xs:element minOccurs="0" name="idParamedico" type="xs:int" />
+              <xs:element minOccurs="0" name="idParamedico2" type="xs:int" />
+              <xs:element minOccurs="0" name="idChofer" type="xs:int" />
+              <xs:element minOccurs="0" name="idChofer2" type="xs:int" />
+              <xs:element name="Activo" type="xs:boolean" />
+              <xs:element minOccurs="0" name="Observaciones">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Moviles">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1"
+                          msdata:AutoIncrementStep="-1" name="idMovil" type="xs:int" />
+              <xs:element name="Nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Medicos">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1"
+                          msdata:AutoIncrementStep="-1" name="idEmpleado" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="NombApel">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="101" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ApelNomb">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="102" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Paramedicos">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1"
+                          msdata:AutoIncrementStep="-1" name="idEmpleado" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="NombApel">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="101" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ApelNomb">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="102" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Choferes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1"
+                          msdata:AutoIncrementStep="-1" name="idEmpleado" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="NombApel">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="101" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ApelNomb">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="102" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RecursosActivos">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1"
+                          msdata:AutoIncrementStep="-1" name="idRecurso" type="xs:int" />
+              <xs:element name="Nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idMovil" type="xs:int" />
+              <xs:element minOccurs="0" name="idMedico" type="xs:int" />
+              <xs:element minOccurs="0" name="idMedico2" type="xs:int" />
+              <xs:element minOccurs="0" name="idParamedico" type="xs:int" />
+              <xs:element minOccurs="0" name="idParamedico2" type="xs:int" />
+              <xs:element minOccurs="0" name="idChofer" type="xs:int" />
+              <xs:element minOccurs="0" name="idChofer2" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="Constraint1">
+      <xs:selector xpath=".//mstns:Recursos" />
+      <xs:field xpath="mstns:idRecurso" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="Moviles_Constraint1">
+      <xs:selector xpath=".//mstns:Moviles" />
+      <xs:field xpath="mstns:idMovil" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="Medicos_Constraint1">
+      <xs:selector xpath=".//mstns:Medicos" />
+      <xs:field xpath="mstns:idEmpleado" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="Paramedicos_Constraint1">
+      <xs:selector xpath=".//mstns:Paramedicos" />
+      <xs:field xpath="mstns:idEmpleado" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="Choferes_Constraint1">
+      <xs:selector xpath=".//mstns:Choferes" />
+      <xs:field xpath="mstns:idEmpleado" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="RecursosActivos_Constraint1">
+      <xs:selector xpath=".//mstns:RecursosActivos" />
+      <xs:field xpath="mstns:idRecurso" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

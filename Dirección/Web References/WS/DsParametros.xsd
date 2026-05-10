@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns="http://tempuri.org/DsParametros.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+           xmlns:mstns="http://tempuri.org/DsParametros.xsd" attributeFormDefault="qualified"
+           elementFormDefault="qualified" targetNamespace="http://tempuri.org/DsParametros.xsd" id="DsParametros"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="DsParametros">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Parametros">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1"
+                          msdata:AutoIncrementStep="-1" name="idParametro" type="xs:int" />
+              <xs:element minOccurs="0" name="DesdeDiaRegaloMes" type="xs:int" />
+              <xs:element minOccurs="0" name="DiasDeCarencia" type="xs:int" />
+              <xs:element minOccurs="0" name="MesesImpagosBaja" type="xs:int" />
+              <xs:element minOccurs="0" name="UltimoNumeroDePrestacion" type="xs:int" />
+              <xs:element minOccurs="0" name="MedicoVeEvolucionOtrosMedicos" type="xs:int" />
+              <xs:element minOccurs="0" name="MascaraRubros">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="CerrarPrestacionesSinDiagnostico" type="xs:boolean" />
+              <xs:element msdata:Caption="Oculta Facturas Anuladas" minOccurs="0" name="OcultaFacturasAnuladas"
+                          type="xs:boolean" />
+              <xs:element minOccurs="0" name="RefrescoPrestaciones" type="xs:int" />
+              <xs:element minOccurs="0" name="RefrescoPrestacionesMouse" type="xs:int" />
+              <xs:element minOccurs="0" name="UsaNegocios" type="xs:boolean" />
+              <xs:element minOccurs="0" name="ProveedoresDuplicados" type="xs:boolean" />
+              <xs:element minOccurs="0" name="IVAAfiliados" type="xs:int" />
+              <xs:element minOccurs="0" name="LimiteMiPyme" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="Constraint1">
+      <xs:selector xpath=".//mstns:Parametros" />
+      <xs:field xpath="mstns:idParametro" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns="http://tempuri.org/DS_Rep_AumentosAuto.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+           xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" xmlns:mstns="http://tempuri.org/DS_Rep_AumentosAuto.xsd"
+           attributeFormDefault="qualified" elementFormDefault="qualified"
+           targetNamespace="http://tempuri.org/DS_Rep_AumentosAuto.xsd" id="DsRepAumentosAuto"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="DsRepAumentosAuto">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="AumentosReporte">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="Aumento" type="xs:decimal" />
+              <xs:element minOccurs="0" name="Tabla">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msprop:Generator_ColumnVarNameInTable="columnItem"
+                          msprop:Generator_ColumnPropNameInRow="Item"
+                          msprop:Generator_ColumnPropNameInTable="ItemColumn" msprop:Generator_UserColumnName="Item"
+                          minOccurs="0" name="Item">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Marca" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

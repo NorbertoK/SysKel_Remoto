@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://tempuri.org/DS_CuentaCorrienteProveedor.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:mstns="http://tempuri.org/DS_CuentaCorrienteProveedor.xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://tempuri.org/DS_CuentaCorrienteProveedor.xsd" id="DsCuentaCorrienteProveedor" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="DsCuentaCorrienteProveedor">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CuentaCorrienteProveedor">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idCompra" type="xs:int" />
+              <xs:element name="Fecha" type="xs:dateTime" />
+              <xs:element name="TipoDeComprobante">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Comprobante">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Pagador">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Importe" type="xs:decimal" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Saldo" type="xs:decimal" />
+              <xs:element name="ImporteNegativo" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Referencia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="Constraint1">
+      <xs:selector xpath=".//mstns:CuentaCorrienteProveedor" />
+      <xs:field xpath="mstns:idCompra" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

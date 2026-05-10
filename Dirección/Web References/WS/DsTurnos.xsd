@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns="http://tempuri.org/DS_Turnos.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+           xmlns:mstns="http://tempuri.org/DS_Turnos.xsd" attributeFormDefault="qualified"
+           elementFormDefault="qualified" targetNamespace="http://tempuri.org/DS_Turnos.xsd" id="DsTurnos"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="DsTurnos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Turnos">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1"
+                          msdata:AutoIncrementStep="-1" name="idTurno" type="xs:int" />
+              <xs:element name="idEmpleado" type="xs:int" />
+              <xs:element name="Dia" type="xs:dateTime" />
+              <xs:element name="Hora">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idTipoDeDocumento" type="xs:int" />
+              <xs:element minOccurs="0" name="NumeroDeDocumento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ApelNomb">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Telefono">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Observaciones">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idAfiliado" type="xs:int" />
+              <xs:element minOccurs="0" name="Solicitado" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="Presente" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="Atendido" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="Terminado" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="Cancelado" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="Evolución">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idMoldeDeTurno" type="xs:int" />
+              <xs:element minOccurs="0" name="idTomador" type="xs:int" />
+              <xs:element minOccurs="0" name="idReceptor" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="DiaDeLaSemana">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MotivosTurnos">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1"
+                          msdata:AutoIncrementStep="-1" name="idMotivoPaciente" type="xs:int" />
+              <xs:element name="idMotivoDeLlamado" type="xs:int" />
+              <xs:element minOccurs="0" name="Observaciones">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idTurno" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DiagnosticosTurnos">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1"
+                          msdata:AutoIncrementStep="-1" name="idDiagnosticoPaciente" type="xs:int" />
+              <xs:element name="idDiagnostico" type="xs:int" />
+              <xs:element minOccurs="0" name="idTurno" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="Constraint1">
+      <xs:selector xpath=".//mstns:Turnos" />
+      <xs:field xpath="mstns:idTurno" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="MotivosTurnos_Constraint1">
+      <xs:selector xpath=".//mstns:MotivosTurnos" />
+      <xs:field xpath="mstns:idMotivoPaciente" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="DiagnosticosTurnos_Constraint1">
+      <xs:selector xpath=".//mstns:DiagnosticosTurnos" />
+      <xs:field xpath="mstns:idDiagnosticoPaciente" />
+    </xs:unique>
+    <xs:keyref msdata:UpdateRule="None" msdata:DeleteRule="None" name="FK_DiagnosticosPacientes_Turnos"
+               refer="mstns:Constraint1">
+      <xs:selector xpath=".//mstns:DiagnosticosTurnos" />
+      <xs:field xpath="mstns:idTurno" />
+    </xs:keyref>
+    <xs:keyref msdata:UpdateRule="None" msdata:DeleteRule="None" name="FK_MotivosPacientes_Turnos"
+               refer="mstns:Constraint1">
+      <xs:selector xpath=".//mstns:MotivosTurnos" />
+      <xs:field xpath="mstns:idTurno" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://tempuri.org/DsRenglonesDeFactura.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:mstns="http://tempuri.org/DsRenglonesDeFactura.xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://tempuri.org/DsRenglonesDeFactura.xsd" id="DsRenglonesDeFactura" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="DsRenglonesDeFactura">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Clientes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idCliente" type="xs:int" />
+              <xs:element name="RazonSocial">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NombreFantasia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idCategoriaIva" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FacturasProforma">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idCliente" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idFacturaProforma" type="xs:int" />
+              <xs:element minOccurs="0" name="Observaciones">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idTandaDeFacturacion" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RenglonesFacturaProforma">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="idFacturaProforma" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idRenglonFacturaProforma" type="xs:int" />
+              <xs:element minOccurs="0" name="idContrato" type="xs:int" />
+              <xs:element minOccurs="0" name="idPlan" type="xs:int" />
+              <xs:element minOccurs="0" name="Cantidad" type="xs:int" />
+              <xs:element minOccurs="0" name="PrecioUnitario" type="xs:decimal" />
+              <xs:element minOccurs="0" name="RevisarMensualmente" type="xs:boolean" />
+              <xs:element minOccurs="0" name="Titulares" type="xs:boolean" />
+              <xs:element minOccurs="0" name="idPorcentajeIVA" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="Constraint1">
+      <xs:selector xpath=".//mstns:Clientes" />
+      <xs:field xpath="mstns:idCliente" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="FacturasProforma_Constraint1">
+      <xs:selector xpath=".//mstns:FacturasProforma" />
+      <xs:field xpath="mstns:idFacturaProforma" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="RenglonesFacturaProforma_Constraint1">
+      <xs:selector xpath=".//mstns:RenglonesFacturaProforma" />
+      <xs:field xpath="mstns:idRenglonFacturaProforma" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_FacturasProforma_Clientes" msdata:parent="Clientes" msdata:child="FacturasProforma" msdata:parentkey="idCliente" msdata:childkey="idCliente" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" />
+      <msdata:Relationship name="FK_RenglonesFacturaProforma_FacturasProforma" msdata:parent="FacturasProforma" msdata:child="RenglonesFacturaProforma" msdata:parentkey="idFacturaProforma" msdata:childkey="idFacturaProforma" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

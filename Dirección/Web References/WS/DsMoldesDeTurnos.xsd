@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns="http://tempuri.org/DS_MoldesDeTurnos.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+           xmlns:mstns="http://tempuri.org/DS_MoldesDeTurnos.xsd" attributeFormDefault="qualified"
+           elementFormDefault="qualified" targetNamespace="http://tempuri.org/DS_MoldesDeTurnos.xsd"
+           id="DsMoldesDeTurnos" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="DsMoldesDeTurnos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="MoldesDeTurnos">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1"
+                          msdata:AutoIncrementStep="-1" name="idMoldeDeTurno" type="xs:int" />
+              <xs:element name="idEmpleado" type="xs:int" />
+              <xs:element name="Lunes" type="xs:boolean" />
+              <xs:element name="Martes" type="xs:boolean" />
+              <xs:element name="Miercoles" type="xs:boolean" />
+              <xs:element name="Jueves" type="xs:boolean" />
+              <xs:element name="Viernes" type="xs:boolean" />
+              <xs:element name="Sabado" type="xs:boolean" />
+              <xs:element name="Domingo" type="xs:boolean" />
+              <xs:element name="Semana1" type="xs:boolean" />
+              <xs:element name="Semana2" type="xs:boolean" />
+              <xs:element name="Semana3" type="xs:boolean" />
+              <xs:element name="Semana4" type="xs:boolean" />
+              <xs:element name="Semana5" type="xs:boolean" />
+              <xs:element minOccurs="0" name="CadaSemanas" type="xs:int" />
+              <xs:element minOccurs="0" name="DesdeSemanas" type="xs:dateTime" />
+              <xs:element name="Minutos" type="xs:int" />
+              <xs:element name="De">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="A">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="Constraint1">
+      <xs:selector xpath=".//mstns:MoldesDeTurnos" />
+      <xs:field xpath="mstns:idMoldeDeTurno" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://tempuri.org/DsClientes.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:mstns="http://tempuri.org/DsClientes.xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://tempuri.org/DsClientes.xsd" id="DsClientes" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="DsClientes">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Clientes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idCliente" type="xs:int" />
+              <xs:element name="RazonSocial">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NombreFantasia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idCategoriaIva" type="xs:int" />
+              <xs:element minOccurs="0" name="CUIT">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idTipoDeCobranza" type="xs:int" />
+              <xs:element minOccurs="0" name="idEntidadDeCobranza" type="xs:int" />
+              <xs:element name="idTipoDeCliente" type="xs:int" />
+              <xs:element minOccurs="0" name="NumeroTarjeta">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="VencimientoTarjeta" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="NombreTitularTarjeta">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NumeroDocumentoTitularTarjeta">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="TelefonoTitularTarjeta">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IngresosBrutos">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Sucursal">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Empresa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Convenio">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Jubilado" type="xs:boolean" />
+              <xs:element minOccurs="0" name="idEmpresasSueldoBcoMacro" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Direcciones">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idDireccion" type="xs:int" />
+              <xs:element minOccurs="0" name="Real" type="xs:boolean" />
+              <xs:element minOccurs="0" name="Cobranza" type="xs:boolean" />
+              <xs:element minOccurs="0" name="idCalle" type="xs:int" />
+              <xs:element minOccurs="0" name="Numero">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Piso">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Departamento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idEntreCalle1" type="xs:int" />
+              <xs:element minOccurs="0" name="idEntreCalle2" type="xs:int" />
+              <xs:element minOccurs="0" name="idZona" type="xs:int" />
+              <xs:element minOccurs="0" name="Observaciones">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idCliente" type="xs:int" />
+              <xs:element minOccurs="0" name="idBarrio" type="xs:int" />
+              <xs:element minOccurs="0" name="idLocalidad" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Contactos">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idContacto" type="xs:int" />
+              <xs:element name="Nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Observaciones">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idCliente" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Contratos">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idContrato" type="xs:int" />
+              <xs:element name="Nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idCliente" type="xs:int" />
+              <xs:element minOccurs="0" name="Condiciones">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idTipoDeContrato" type="xs:int" />
+              <xs:element name="Ene" type="xs:short" />
+              <xs:element name="Feb" type="xs:short" />
+              <xs:element name="Mar" type="xs:short" />
+              <xs:element name="Abr" type="xs:short" />
+              <xs:element name="May" type="xs:short" />
+              <xs:element name="Jun" type="xs:short" />
+              <xs:element name="Jul" type="xs:short" />
+              <xs:element name="Ago" type="xs:short" />
+              <xs:element name="Sep" type="xs:short" />
+              <xs:element name="Oct" type="xs:short" />
+              <xs:element name="Nov" type="xs:short" />
+              <xs:element name="Dic" type="xs:short" />
+              <xs:element minOccurs="0" name="Observaciones">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idNegocio" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Solicitudes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AltaBajaSusp">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idContrato" type="xs:int" />
+              <xs:element name="Fecha" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="FechaFinal" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="Renovacion" type="xs:dateTime" />
+              <xs:element name="FechaRegistro" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="idVendedor" type="xs:int" />
+              <xs:element minOccurs="0" name="idTomadorDeBaja" type="xs:int" />
+              <xs:element minOccurs="0" name="idMotivoDeBaja" type="xs:int" />
+              <xs:element minOccurs="0" name="Observaciones">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idGrabador" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idSolicitud" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Planes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idPlan" type="xs:int" />
+              <xs:element name="Nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Iniciales">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idContrato" type="xs:int" />
+              <xs:element minOccurs="0" name="Cuota" type="xs:decimal" />
+              <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
+              <xs:element minOccurs="0" name="PadronExterno" type="xs:boolean" />
+              <xs:element minOccurs="0" name="idProteccion" type="xs:int" />
+              <xs:element minOccurs="0" name="idPrepago" type="xs:int" />
+              <xs:element minOccurs="0" name="CuotaAdherente" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TelefonosContactos">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idTelefono" type="xs:int" />
+              <xs:element name="Numero">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idContacto" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TelefonosDirecciones">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idTelefono" type="xs:int" />
+              <xs:element name="Numero">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idDireccion" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FacturasProforma">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idFacturaProforma" type="xs:int" />
+              <xs:element name="idCliente" type="xs:int" />
+              <xs:element minOccurs="0" name="Observaciones">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idTandaDeFacturacion" type="xs:int" />
+              <xs:element minOccurs="0" name="FacturarMes" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DireccionContrato">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idDireccion" type="xs:int" />
+              <xs:element minOccurs="0" name="idLocalidad" type="xs:int" />
+              <xs:element minOccurs="0" name="idCalle" type="xs:int" />
+              <xs:element minOccurs="0" name="Numero">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Piso">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Departamento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idEntreCalle1" type="xs:int" />
+              <xs:element minOccurs="0" name="idEntreCalle2" type="xs:int" />
+              <xs:element minOccurs="0" name="Observaciones">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idContrato" type="xs:int" />
+              <xs:element minOccurs="0" name="idBarrio" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TelefonosDireccionContrato">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idTelefono" type="xs:int" />
+              <xs:element name="Numero">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idDireccion" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EmailsContactosClientes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idEmail" type="xs:int" />
+              <xs:element name="Email">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idContacto" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EmailsClientes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idEmail" type="xs:int" />
+              <xs:element name="Email">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idCliente" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RenglonesFacturaProforma">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idRenglonFacturaProforma" type="xs:int" />
+              <xs:element minOccurs="0" name="Cantidad" type="xs:int" />
+              <xs:element minOccurs="0" name="PrecioUnitario" type="xs:decimal" />
+              <xs:element minOccurs="0" name="idContrato" type="xs:int" />
+              <xs:element minOccurs="0" name="RevisarMensualmente" type="xs:boolean" />
+              <xs:element minOccurs="0" name="idFacturaProforma" type="xs:int" />
+              <xs:element minOccurs="0" name="idPlan" type="xs:int" />
+              <xs:element minOccurs="0" name="Titulares" type="xs:boolean" />
+              <xs:element minOccurs="0" name="idPorcentajeIVA" type="xs:int" />
+              <xs:element minOccurs="0" name="PrecioUnitarioEscrito" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="Constraint1">
+      <xs:selector xpath=".//mstns:Clientes" />
+      <xs:field xpath="mstns:idCliente" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="Direcciones_Constraint1">
+      <xs:selector xpath=".//mstns:Direcciones" />
+      <xs:field xpath="mstns:idDireccion" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="Contactos_Constraint1">
+      <xs:selector xpath=".//mstns:Contactos" />
+      <xs:field xpath="mstns:idContacto" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="Contratos_Constraint1">
+      <xs:selector xpath=".//mstns:Contratos" />
+      <xs:field xpath="mstns:idContrato" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="Solicitudes_Constraint1">
+      <xs:selector xpath=".//mstns:Solicitudes" />
+      <xs:field xpath="mstns:idSolicitud" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="Planes_Constraint1">
+      <xs:selector xpath=".//mstns:Planes" />
+      <xs:field xpath="mstns:idPlan" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="TelefonosContactos_Constraint1">
+      <xs:selector xpath=".//mstns:TelefonosContactos" />
+      <xs:field xpath="mstns:idTelefono" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="TelefonosDirecciones_Constraint1">
+      <xs:selector xpath=".//mstns:TelefonosDirecciones" />
+      <xs:field xpath="mstns:idTelefono" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="FacturasProforma_Constraint1">
+      <xs:selector xpath=".//mstns:FacturasProforma" />
+      <xs:field xpath="mstns:idFacturaProforma" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="DireccionContrato_Constraint1">
+      <xs:selector xpath=".//mstns:DireccionContrato" />
+      <xs:field xpath="mstns:idDireccion" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="TelefonosDireccionContrato_Constraint1">
+      <xs:selector xpath=".//mstns:TelefonosDireccionContrato" />
+      <xs:field xpath="mstns:idTelefono" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="EmailsContactosClientes_Constraint1">
+      <xs:selector xpath=".//mstns:EmailsContactosClientes" />
+      <xs:field xpath="mstns:idEmail" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="EmailsClientes_Constraint1">
+      <xs:selector xpath=".//mstns:EmailsClientes" />
+      <xs:field xpath="mstns:idEmail" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="RenglonesFacturaProforma_Constraint1">
+      <xs:selector xpath=".//mstns:RenglonesFacturaProforma" />
+      <xs:field xpath="mstns:idRenglonFacturaProforma" />
+    </xs:unique>
+    <xs:keyref msdata:DeleteRule="None" name="FK_RenglonesFacturaProforma_FacturasProforma1" refer="mstns:FacturasProforma_Constraint1">
+      <xs:selector xpath=".//mstns:RenglonesFacturaProforma" />
+      <xs:field xpath="mstns:idFacturaProforma" />
+    </xs:keyref>
+    <xs:keyref msdata:DeleteRule="None" name="FK_EmailsClientes_Clientes" refer="mstns:Constraint1">
+      <xs:selector xpath=".//mstns:EmailsClientes" />
+      <xs:field xpath="mstns:idCliente" />
+    </xs:keyref>
+    <xs:keyref msdata:DeleteRule="None" name="FK_Emails_Contactos" refer="mstns:Contactos_Constraint1">
+      <xs:selector xpath=".//mstns:EmailsContactosClientes" />
+      <xs:field xpath="mstns:idContacto" />
+    </xs:keyref>
+    <xs:keyref msdata:DeleteRule="None" name="FK__Telefonos__idDir__4850AF911" refer="mstns:DireccionContrato_Constraint1">
+      <xs:selector xpath=".//mstns:TelefonosDireccionContrato" />
+      <xs:field xpath="mstns:idDireccion" />
+    </xs:keyref>
+    <xs:keyref msdata:DeleteRule="None" name="FK_Direcciones_Contratos" refer="mstns:Contratos_Constraint1">
+      <xs:selector xpath=".//mstns:DireccionContrato" />
+      <xs:field xpath="mstns:idContrato" />
+    </xs:keyref>
+    <xs:keyref msdata:DeleteRule="None" name="FK_FacturasProforma_Clientes" refer="mstns:Constraint1">
+      <xs:selector xpath=".//mstns:FacturasProforma" />
+      <xs:field xpath="mstns:idCliente" />
+    </xs:keyref>
+    <xs:keyref msdata:DeleteRule="None" name="FK__Telefonos__Direcciones" refer="mstns:Direcciones_Constraint1">
+      <xs:selector xpath=".//mstns:TelefonosDirecciones" />
+      <xs:field xpath="mstns:idDireccion" />
+    </xs:keyref>
+    <xs:keyref msdata:DeleteRule="None" name="FK_Telefonos_Contactos" refer="mstns:Contactos_Constraint1">
+      <xs:selector xpath=".//mstns:TelefonosContactos" />
+      <xs:field xpath="mstns:idContacto" />
+    </xs:keyref>
+    <xs:keyref msdata:DeleteRule="None" name="FK_Planes_Contratos" refer="mstns:Contratos_Constraint1">
+      <xs:selector xpath=".//mstns:Planes" />
+      <xs:field xpath="mstns:idContrato" />
+    </xs:keyref>
+    <xs:keyref msdata:DeleteRule="None" name="FK_Solicitudes_Contratos" refer="mstns:Contratos_Constraint1">
+      <xs:selector xpath=".//mstns:Solicitudes" />
+      <xs:field xpath="mstns:idContrato" />
+    </xs:keyref>
+    <xs:keyref msdata:DeleteRule="None" name="FK_Contratos_Clientes" refer="mstns:Constraint1">
+      <xs:selector xpath=".//mstns:Contratos" />
+      <xs:field xpath="mstns:idCliente" />
+    </xs:keyref>
+    <xs:keyref msdata:DeleteRule="None" name="FK_Contactos_Clientes" refer="mstns:Constraint1">
+      <xs:selector xpath=".//mstns:Contactos" />
+      <xs:field xpath="mstns:idCliente" />
+    </xs:keyref>
+    <xs:keyref msdata:DeleteRule="None" name="FK__Direcciones__Clientes" refer="mstns:Constraint1">
+      <xs:selector xpath=".//mstns:Direcciones" />
+      <xs:field xpath="mstns:idCliente" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>

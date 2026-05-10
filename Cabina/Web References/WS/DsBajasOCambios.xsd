@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://tempuri.org/DsBajasOCambios.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:mstns="http://tempuri.org/DsBajasOCambios.xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://tempuri.org/DsBajasOCambios.xsd" id="DsBajasOCambios" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="DsBajasOCambios">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="BajasOCambios">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idBajaOCambio" type="xs:int" />
+              <xs:element minOccurs="0" name="Alta" type="xs:boolean" />
+              <xs:element minOccurs="0" name="Baja" type="xs:boolean" />
+              <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="FechaRegistro" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="idVendedor" type="xs:int" />
+              <xs:element minOccurs="0" name="idTomadorDeBaja" type="xs:int" />
+              <xs:element minOccurs="0" name="idMotivoDeBaja" type="xs:int" />
+              <xs:element minOccurs="0" name="Observaciones" type="xs:int" />
+              <xs:element minOccurs="0" name="EsCambioDePlan" type="xs:boolean" />
+              <xs:element minOccurs="0" name="idPlanNuevo" type="xs:int" />
+              <xs:element minOccurs="0" name="idGrabador" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BajasOCambiosDetalles">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idBajaOCambioDetalle" type="xs:int" />
+              <xs:element minOccurs="0" name="idBajaOCambio" type="xs:int" />
+              <xs:element minOccurs="0" name="Elegido" type="xs:boolean" />
+              <xs:element minOccurs="0" name="idAfiliado" type="xs:int" />
+              <xs:element minOccurs="0" name="idPlanDeBaja" type="xs:int" />
+              <xs:element minOccurs="0" name="Estado">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AfiliadosDelGrupo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idAfiliado" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ApelNomb">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="102" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idTipoDeCobranza" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AfiliadosPlanesDelGrupo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="idAfiliado" type="xs:int" />
+              <xs:element minOccurs="0" name="idPlanDeBaja" type="xs:int" />
+              <xs:element minOccurs="0" name="Estado">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="Constraint1">
+      <xs:selector xpath=".//mstns:BajasOCambios" />
+      <xs:field xpath="mstns:idBajaOCambio" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="BajasOCambiosDetalles_Constraint1">
+      <xs:selector xpath=".//mstns:BajasOCambiosDetalles" />
+      <xs:field xpath="mstns:idBajaOCambioDetalle" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="AfiliadosDelGrupo_Constraint1">
+      <xs:selector xpath=".//mstns:AfiliadosDelGrupo" />
+      <xs:field xpath="mstns:idAfiliado" />
+    </xs:unique>
+    <xs:keyref msdata:DeleteRule="None" name="FK_BajasOCambiosDetalles_BajasOCambios" refer="mstns:Constraint1">
+      <xs:selector xpath=".//mstns:BajasOCambiosDetalles" />
+      <xs:field xpath="mstns:idBajaOCambio" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns="http://tempuri.org/DsRemesas.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+           xmlns:mstns="http://tempuri.org/DsRemesas.xsd" attributeFormDefault="qualified"
+           elementFormDefault="qualified" targetNamespace="http://tempuri.org/DsRemesas.xsd" id="DsRemesas"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="DsRemesas">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ComprobantesRemesas">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1"
+                          msdata:AutoIncrementStep="-1" name="idComprobanteRemesa" type="xs:int" />
+              <xs:element name="idRemesa" type="xs:int" />
+              <xs:element minOccurs="0" name="idReferencia" type="xs:int" />
+              <xs:element minOccurs="0" name="ImporteReferencia" type="xs:decimal" />
+              <xs:element minOccurs="0" name="ImporteCobrado" type="xs:decimal" />
+              <xs:element minOccurs="0" name="Observaciones" type="xs:string" />
+              <xs:element minOccurs="0" name="HacerNdeC" type="xs:boolean" />
+              <xs:element minOccurs="0" name="idPrestacion" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Remesas">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1"
+                          msdata:AutoIncrementStep="-1" name="idRemesa" type="xs:int" />
+              <xs:element minOccurs="0" name="idCobrador" type="xs:int" />
+              <xs:element name="Fecha" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="Caja">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idReceptor" type="xs:int" />
+              <xs:element minOccurs="0" name="idGrabador" type="xs:int" />
+              <xs:element minOccurs="0" name="Importe" type="xs:decimal" />
+              <xs:element minOccurs="0" name="Tipo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Detalle">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idEntidadDeCobranza" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ValoresRemesas">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1"
+                          msdata:AutoIncrementStep="-1" name="idValorRemesa" type="xs:int" />
+              <xs:element minOccurs="0" name="idRemesa" type="xs:int" />
+              <xs:element name="idTipoDeValor" type="xs:int" />
+              <xs:element name="Importe" type="xs:decimal" />
+              <xs:element minOccurs="0" name="Observaciones" type="xs:string" />
+              <xs:element minOccurs="0" name="idBanco" type="xs:int" />
+              <xs:element minOccurs="0" name="NumeroDeCheque">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Vencimiento" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="idEmpleado" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="Constraint1">
+      <xs:selector xpath=".//mstns:ComprobantesRemesas" />
+      <xs:field xpath="mstns:idComprobanteRemesa" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="Remesas_Constraint1">
+      <xs:selector xpath=".//mstns:Remesas" />
+      <xs:field xpath="mstns:idRemesa" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="ValoresRemesas_Constraint1">
+      <xs:selector xpath=".//mstns:ValoresRemesas" />
+      <xs:field xpath="mstns:idValorRemesa" />
+    </xs:unique>
+    <xs:keyref msdata:DeleteRule="None" name="FK_Remesas_ValoresRemesas" refer="mstns:Remesas_Constraint1">
+      <xs:selector xpath=".//mstns:ValoresRemesas" />
+      <xs:field xpath="mstns:idRemesa" />
+    </xs:keyref>
+    <xs:keyref msdata:DeleteRule="None" name="FK_ComprobantesRemesas_Remesas" refer="mstns:Remesas_Constraint1">
+      <xs:selector xpath=".//mstns:ComprobantesRemesas" />
+      <xs:field xpath="mstns:idRemesa" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>

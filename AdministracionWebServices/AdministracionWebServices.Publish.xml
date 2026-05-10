@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\inetpub\wwwroot\SysKel" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="Default Web Site/SysKel" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="False" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/AdministracionWebServices.pdb" publishTime="05/04/2015 22:09:38" />
+    <file relUrl="Service.asmx" publishTime="08/04/2012 11:11:33" />
+    <file relUrl="Web.config" publishTime="05/04/2015 22:40:32" />
+    <file relUrl="bin/AdministracionNegocios.pdb" publishTime="05/04/2015 22:09:37" />
+    <file relUrl="bin/AdministracionNegocios.dll" publishTime="05/04/2015 22:09:37" />
+    <file relUrl="bin/AdministracionWebServices.dll" publishTime="05/04/2015 22:09:38" />
+  </publishProfile>
+</publishData>

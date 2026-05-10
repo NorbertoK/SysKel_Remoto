@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://tempuri.org/DsCaja.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:mstns="http://tempuri.org/DsCaja.xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://tempuri.org/DsCaja.xsd" id="DsCaja" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="DsCaja">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Caja">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Detalle">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="251" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Grabador">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="101" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Cheque" type="xs:decimal" />
+              <xs:element minOccurs="0" name="Grupo" type="xs:int" />
+              <xs:element minOccurs="0" name="Registro" type="xs:int" />
+              <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Comisión" type="xs:decimal" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Depósito" type="xs:decimal" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Efectivo" type="xs:decimal" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Tarjeta" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

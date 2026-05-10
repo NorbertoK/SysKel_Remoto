@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:mstns="http://tempuri.org/DsCompra.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns="http://tempuri.org/DsCompra.xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://tempuri.org/DsCompra.xsd" id="DsCompra" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="DsCompra">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Compras">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="idProveedor" type="xs:int" />
+              <xs:element minOccurs="0" name="idGrabador" type="xs:int" />
+              <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="Comprobante">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Importe" type="xs:decimal" />
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idCompra" type="xs:int" />
+              <xs:element minOccurs="0" name="idTipoDeComprobante" type="xs:int" />
+              <xs:element minOccurs="0" name="FechaRegistro" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="Nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="CUIT">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idCategoriaIVA" type="xs:int" />
+              <xs:element minOccurs="0" name="FechaDePago" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="Concepto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="NegociosCompras">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idNegocioCompra" type="xs:int" />
+              <xs:element name="idNegocio" type="xs:int" />
+              <xs:element name="idCompra" type="xs:int" />
+              <xs:element name="Porcentaje" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="IVACompras">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idIVACompras" type="xs:int" />
+              <xs:element minOccurs="0" name="idCompra" type="xs:int" />
+              <xs:element minOccurs="0" name="idPorcentajeIVA" type="xs:int" />
+              <xs:element minOccurs="0" name="ImporteNeto" type="xs:decimal" />
+              <xs:element minOccurs="0" name="ImporteIVA" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LibroDiarioCompra">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idLibroDiario" type="xs:int" />
+              <xs:element minOccurs="0" name="idCompra" type="xs:int" />
+              <xs:element minOccurs="0" name="idRubro" type="xs:int" />
+              <xs:element minOccurs="0" name="Debe" type="xs:decimal" />
+              <xs:element minOccurs="0" name="Haber" type="xs:decimal" />
+              <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="Constraint1">
+      <xs:selector xpath=".//mstns:Compras" />
+      <xs:field xpath="mstns:idCompra" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="NegociosCompras_Constraint1">
+      <xs:selector xpath=".//mstns:NegociosCompras" />
+      <xs:field xpath="mstns:idNegocioCompra" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="IVACompras_Constraint1">
+      <xs:selector xpath=".//mstns:IVACompras" />
+      <xs:field xpath="mstns:idIVACompras" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="LibroDiarioCompra_Constraint1">
+      <xs:selector xpath=".//mstns:LibroDiarioCompra" />
+      <xs:field xpath="mstns:idLibroDiario" />
+    </xs:unique>
+    <xs:keyref msdata:DeleteRule="None" name="FK_Compras_LibroDiario" refer="mstns:Constraint1">
+      <xs:selector xpath=".//mstns:LibroDiarioCompra" />
+      <xs:field xpath="mstns:idCompra" />
+    </xs:keyref>
+    <xs:keyref msdata:DeleteRule="None" name="FK_Compras_IVACompras" refer="mstns:Constraint1">
+      <xs:selector xpath=".//mstns:IVACompras" />
+      <xs:field xpath="mstns:idCompra" />
+    </xs:keyref>
+    <xs:keyref msdata:DeleteRule="None" name="FK_NegociosCompras_Compras" refer="mstns:Constraint1">
+      <xs:selector xpath=".//mstns:NegociosCompras" />
+      <xs:field xpath="mstns:idCompra" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>

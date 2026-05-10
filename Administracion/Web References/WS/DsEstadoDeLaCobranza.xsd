@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:mstns="http://tempuri.org/DsEstadoDeLaCobranza.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns="http://tempuri.org/DsEstadoDeLaCobranza.xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://tempuri.org/DsEstadoDeLaCobranza.xsd" id="DsEstadoDeLaCobranza" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="DsEstadoDeLaCobranza">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EstadoDeLaCobranza">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Orden" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Tipo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Periodo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="AnyoMes">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Fecha" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="CantA" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ImporteA" type="xs:decimal" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="CantC" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ImporteC" type="xs:decimal" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="CantP" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ImporteP" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

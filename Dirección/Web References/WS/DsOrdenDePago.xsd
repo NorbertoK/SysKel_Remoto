@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns="http://tempuri.org/DS_Pago.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+           xmlns:mstns="http://tempuri.org/DS_Pago.xsd" attributeFormDefault="qualified" elementFormDefault="qualified"
+           targetNamespace="http://tempuri.org/DS_Pago.xsd" id="DsOrdenDePago"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="DsOrdenDePago">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ComprasElegidas">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1"
+                          msdata:AutoIncrementStep="-1" name="idCompra" type="xs:int" />
+              <xs:element name="idProveedor" type="xs:int" />
+              <xs:element name="Fecha" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="Comprobante">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Saldo" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="OrdenesDePago">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1"
+                          msdata:AutoIncrementStep="-1" name="idOrdenDePago" type="xs:int" />
+              <xs:element minOccurs="0" name="idProveedor" type="xs:int" />
+              <xs:element minOccurs="0" name="idGrabador" type="xs:int" />
+              <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="Importe" type="xs:decimal" />
+              <xs:element minOccurs="0" name="idEmpleado" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ComprobantesOrdenesDePago">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1"
+                          msdata:AutoIncrementStep="-1" name="idComprobanteOrdenDePago" type="xs:int" />
+              <xs:element name="idOrdenDePago" type="xs:int" />
+              <xs:element name="idCompra" type="xs:int" />
+              <xs:element minOccurs="0" name="ImportePagado" type="xs:decimal" />
+              <xs:element minOccurs="0" name="Observaciones">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="FechaCompra" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ComprobanteCompra">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="idProveedor" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="SaldoCompra" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ValoresOrdenDePago">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="idTipoDeValor" type="xs:int" />
+              <xs:element minOccurs="0" name="Importe" type="xs:decimal" />
+              <xs:element minOccurs="0" name="Observaciones">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idBanco" type="xs:int" />
+              <xs:element minOccurs="0" name="NumeroDeCheque">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Vencimiento" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1"
+                          msdata:AutoIncrementStep="-1" name="idValorRetiro" type="xs:int" />
+              <xs:element minOccurs="0" name="idRetiro" type="xs:int" />
+              <xs:element minOccurs="0" name="idOrdenDePago" type="xs:int" />
+              <xs:element minOccurs="0" name="Transferido" type="xs:boolean" />
+              <xs:element minOccurs="0" name="ImporteTransferido" type="xs:decimal" />
+              <xs:element minOccurs="0" name="idValorRemesa" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LibroDiarioOrdenDePago">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1"
+                          msdata:AutoIncrementStep="-1" name="idLibroDiario" type="xs:int" />
+              <xs:element minOccurs="0" name="idRubro" type="xs:int" />
+              <xs:element minOccurs="0" name="Debe" type="xs:decimal" />
+              <xs:element minOccurs="0" name="Haber" type="xs:decimal" />
+              <xs:element minOccurs="0" name="idOrdenDePago" type="xs:int" />
+              <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="Constraint1">
+      <xs:selector xpath=".//mstns:ComprasElegidas" />
+      <xs:field xpath="mstns:idCompra" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="OrdenesDePago_Constraint1">
+      <xs:selector xpath=".//mstns:OrdenesDePago" />
+      <xs:field xpath="mstns:idOrdenDePago" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true"
+               name="ComprobantesOrdenesDePago_Constraint1">
+      <xs:selector xpath=".//mstns:ComprobantesOrdenesDePago" />
+      <xs:field xpath="mstns:idComprobanteOrdenDePago" />
+    </xs:unique>
+    <xs:unique msdata:PrimaryKey="true" name="Constraint2">
+      <xs:selector xpath=".//mstns:ValoresOrdenDePago" />
+      <xs:field xpath="mstns:idValorRetiro" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="LibroDiarioOrdenDePago_Constraint1">
+      <xs:selector xpath=".//mstns:LibroDiarioOrdenDePago" />
+      <xs:field xpath="mstns:idLibroDiario" />
+    </xs:unique>
+    <xs:keyref msdata:DeleteRule="None" name="FK_OrdenesDePago_LibroDiario" refer="mstns:OrdenesDePago_Constraint1">
+      <xs:selector xpath=".//mstns:LibroDiarioOrdenDePago" />
+      <xs:field xpath="mstns:idOrdenDePago" />
+    </xs:keyref>
+    <xs:keyref msdata:DeleteRule="None" name="FK_ValoresRetiros_OrdenesDePago" refer="mstns:OrdenesDePago_Constraint1">
+      <xs:selector xpath=".//mstns:ValoresOrdenDePago" />
+      <xs:field xpath="mstns:idOrdenDePago" />
+    </xs:keyref>
+    <xs:keyref msdata:DeleteRule="None" name="FK_ComprobantesOrdenesDePago_OrdenesDePago"
+               refer="mstns:OrdenesDePago_Constraint1">
+      <xs:selector xpath=".//mstns:ComprobantesOrdenesDePago" />
+      <xs:field xpath="mstns:idOrdenDePago" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>

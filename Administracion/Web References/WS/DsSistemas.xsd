@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:mstns="http://tempuri.org/DS_Sistemasxsd.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns="http://tempuri.org/DS_Sistemasxsd.xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://tempuri.org/DS_Sistemasxsd.xsd" id="DsSistemas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="DsSistemas">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Sistemas">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idSistema" type="xs:int" />
+              <xs:element name="Recibo" type="xs:int" />
+              <xs:element name="NotaDeCredito" type="xs:int" />
+              <xs:element minOccurs="0" name="NotaDeDebito" type="xs:int" />
+              <xs:element minOccurs="0" name="ComprobanteFactCuotaAfiliados" type="xs:int" />
+              <xs:element minOccurs="0" name="ComprobanteFactPrestaciones" type="xs:int" />
+              <xs:element minOccurs="0" name="DNI" type="xs:int" />
+              <xs:element minOccurs="0" name="MotivoDevolucionCobranza_SaldoCero" type="xs:int" />
+              <xs:element minOccurs="0" name="MotivoDevolucionCobranza_Baja" type="xs:int" />
+              <xs:element minOccurs="0" name="CoberturaAfiliado" type="xs:int" />
+              <xs:element minOccurs="0" name="CoberturaContrato" type="xs:int" />
+              <xs:element minOccurs="0" name="Consulta" type="xs:int" />
+              <xs:element minOccurs="0" name="Internacion" type="xs:int" />
+              <xs:element minOccurs="0" name="MaxCantDetallesPorComprobante" type="xs:int" />
+              <xs:element minOccurs="0" name="MotivoDeBaja_Automatica" type="xs:int" />
+              <xs:element minOccurs="0" name="Empleado_Sistema" type="xs:int" />
+              <xs:element minOccurs="0" name="TandaDebitoAutomatico" type="xs:int" />
+              <xs:element minOccurs="0" name="PuntoDeVentaPrestaciones" type="xs:int" />
+              <xs:element minOccurs="0" name="MotivoDevolucionCobranza_ComprobanteFaltante" type="xs:int" />
+              <xs:element minOccurs="0" name="SinMedicamentos" type="xs:int" />
+              <xs:element minOccurs="0" name="CobradorBajas" type="xs:int" />
+              <xs:element minOccurs="0" name="CobradorMorosos" type="xs:int" />
+              <xs:element minOccurs="0" name="VendedorAfiliadosContrato" type="xs:int" />
+              <xs:element minOccurs="0" name="CodigoPrestacionProgramada" type="xs:int" />
+              <xs:element minOccurs="0" name="TipoDeDestinoPrestacionProgramada" type="xs:int" />
+              <xs:element minOccurs="0" name="NombreEmpresa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="FacturaDeCompra" type="xs:int" />
+              <xs:element minOccurs="0" name="Pago" type="xs:int" />
+              <xs:element minOccurs="0" name="Caja_Despachador" type="xs:int" />
+              <xs:element minOccurs="0" name="PlanConsultorio" type="xs:int" />
+              <xs:element minOccurs="0" name="ClienteVarios" type="xs:int" />
+              <xs:element minOccurs="0" name="NegocioAfiliados" type="xs:int" />
+              <xs:element minOccurs="0" name="CUITEmpresa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IVACompras" type="xs:int" />
+              <xs:element minOccurs="0" name="PagosEfectivo" type="xs:int" />
+              <xs:element minOccurs="0" name="PagosConValores" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="Constraint1">
+      <xs:selector xpath=".//mstns:Sistemas" />
+      <xs:field xpath="mstns:idSistema" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

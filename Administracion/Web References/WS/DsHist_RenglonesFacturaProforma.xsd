@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:mstns="http://tempuri.org/DS_Hist_RenglonesFacturaProforma.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns="http://tempuri.org/DS_Hist_RenglonesFacturaProforma.xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://tempuri.org/DS_Hist_RenglonesFacturaProforma.xsd" id="DsHist_RenglonesFacturaProforma" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="DsHist_RenglonesFacturaProforma">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="View_Hist_RenglonesFacturaProforma">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idHist_RenglonesFacturaProforma" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Cliente">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idRenglonFacturaProforma" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Contrato_x0020_Antarior">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Contrato_x0020_Nuevo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Plan_x0020_Anterior">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Plan_x0020_Nuevo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Cantidad_anterior" type="xs:int" />
+              <xs:element minOccurs="0" name="Cantidad_nuevo" type="xs:int" />
+              <xs:element minOccurs="0" name="PrecioUnitario_anterior" type="xs:decimal" />
+              <xs:element minOccurs="0" name="PrecioUnitario_nuevo" type="xs:decimal" />
+              <xs:element minOccurs="0" name="RevisarMensualmente_anterior" type="xs:boolean" />
+              <xs:element minOccurs="0" name="RevisarMensualmente_nuevo" type="xs:boolean" />
+              <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

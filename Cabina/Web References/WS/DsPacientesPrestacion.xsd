@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://tempuri.org/DsPacientesPrestacion.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:mstns="http://tempuri.org/DsPacientesPrestacion.xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://tempuri.org/DsPacientesPrestacion.xsd" id="DsPacientesPrestacion" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="DsPacientesPrestacion">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Pacientes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idPaciente" type="xs:int" />
+              <xs:element name="idPrestacion" type="xs:int" />
+              <xs:element minOccurs="0" name="idAfiliado" type="xs:int" />
+              <xs:element minOccurs="0" name="Nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Edad" type="xs:int" />
+              <xs:element minOccurs="0" name="EdadEn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Sexo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idPrepago" type="xs:int" />
+              <xs:element minOccurs="0" name="NroAfiliadoPrepago">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IncidenteExterno">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idCobertura" type="xs:int" />
+              <xs:element minOccurs="0" name="idPractica" type="xs:int" />
+              <xs:element minOccurs="0" name="Importe" type="xs:decimal" />
+              <xs:element minOccurs="0" name="Antecedentes">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="idContrato" type="xs:int" />
+              <xs:element minOccurs="0" name="idMedico" type="xs:int" />
+              <xs:element minOccurs="0" name="DatosCompletos" type="xs:boolean" />
+              <xs:element minOccurs="0" name="ExtraCobertura" type="xs:boolean" />
+              <xs:element minOccurs="0" name="idTipoDeDocumento" type="xs:int" />
+              <xs:element minOccurs="0" name="NumeroDeDocumento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Evolución">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="CondicionesContrato">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MotivosPacientes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idMotivoPaciente" type="xs:int" />
+              <xs:element name="idMotivoDeLlamado" type="xs:int" />
+              <xs:element name="idPaciente" type="xs:int" />
+              <xs:element minOccurs="0" name="Observaciones">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DiagnosticosPacientes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idDiagnosticoPaciente" type="xs:int" />
+              <xs:element name="idDiagnostico" type="xs:int" />
+              <xs:element name="idPaciente" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MedicamentosPacientes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idMedicamentosPacientes" type="xs:int" />
+              <xs:element name="idMedicamento" type="xs:int" />
+              <xs:element name="idPaciente" type="xs:int" />
+              <xs:element name="Cantidad" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="Constraint1">
+      <xs:selector xpath=".//mstns:Pacientes" />
+      <xs:field xpath="mstns:idPaciente" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="MotivosPacientes_Constraint1">
+      <xs:selector xpath=".//mstns:MotivosPacientes" />
+      <xs:field xpath="mstns:idMotivoPaciente" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="DiagnosticosPacientes_Constraint1">
+      <xs:selector xpath=".//mstns:DiagnosticosPacientes" />
+      <xs:field xpath="mstns:idDiagnosticoPaciente" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="MedicamentosPacientes_Constraint1">
+      <xs:selector xpath=".//mstns:MedicamentosPacientes" />
+      <xs:field xpath="mstns:idMedicamentosPacientes" />
+    </xs:unique>
+    <xs:keyref msdata:DeleteRule="None" name="FK__Medicamentos__Pacientes" refer="mstns:Constraint1">
+      <xs:selector xpath=".//mstns:MedicamentosPacientes" />
+      <xs:field xpath="mstns:idPaciente" />
+    </xs:keyref>
+    <xs:keyref msdata:DeleteRule="None" name="FK__Diagnosticos__Pacientes" refer="mstns:Constraint1">
+      <xs:selector xpath=".//mstns:DiagnosticosPacientes" />
+      <xs:field xpath="mstns:idPaciente" />
+    </xs:keyref>
+    <xs:keyref msdata:DeleteRule="None" name="FK__MotivosPacientes__Pacientes" refer="mstns:Constraint1">
+      <xs:selector xpath=".//mstns:MotivosPacientes" />
+      <xs:field xpath="mstns:idPaciente" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>

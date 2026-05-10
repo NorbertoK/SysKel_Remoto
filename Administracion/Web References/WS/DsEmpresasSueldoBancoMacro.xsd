@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:mstns="http://tempuri.org/DS_EmpressasSueldoBancoMacro.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns="http://tempuri.org/DS_EmpressasSueldoBancoMacro.xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://tempuri.org/DS_EmpressasSueldoBancoMacro.xsd" id="DsEmpresasSueldoBancoMacro" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="DsEmpresasSueldoBancoMacro">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EmpresasSueldoBcoMacro">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idEmpresasSueldoBcoMacro" type="xs:int" />
+              <xs:element minOccurs="0" name="Nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="Constraint1">
+      <xs:selector xpath=".//mstns:EmpresasSueldoBcoMacro" />
+      <xs:field xpath="mstns:idEmpresasSueldoBcoMacro" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

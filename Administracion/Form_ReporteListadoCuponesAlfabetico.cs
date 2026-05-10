@@ -1,0 +1,92 @@
+using System;
+using Administracion.WS;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+
+namespace Administracion
+{
+    public partial class FormReporteListadoCuponesAlfabetico : Form1
+    {
+        private ParameterDiscreteValue _crParameterDiscreteValue = new ParameterDiscreteValue();
+        private ParameterFieldDefinitions _crParameterFieldDefinitions;
+        private ParameterFieldDefinition _crParameterFieldLocation;
+        private ParameterValues _crParameterValues = new ParameterValues();
+
+        public FormReporteListadoCuponesAlfabetico()
+        {
+            InitializeComponent();
+        }
+
+        public string Periodo { get; set; }
+        public int IdTipoDeCobranza { get; set; }
+        public int IdEntidadDeCobranza { get; set; }
+        public int IdCobrador { get; set; }
+        public string Prefijo { get; set; }
+        public int IdZona { get; set; }
+        public string Desde { get; set; }
+        public string Hasta { get; set; }
+        public DateTime DesdeFecha { get; set; }
+        public DateTime HastaFecha { get; set; }
+        public string TodosOPendientes { get; set; }
+        public string Comprobantes { get; set; }
+        
+        private void FormReporteListadoSimpleCuponesLoad(object sender, EventArgs e)
+        {
+            _crParameterFieldDefinitions = crListadoComprobantesAlfabetico1.DataDefinition.ParameterFields;
+            dsReportComprobantes1.Merge(new Service().GetReportComprobantes(Periodo, IdTipoDeCobranza,
+                IdEntidadDeCobranza, IdCobrador, Prefijo,
+                IdZona, Desde, Hasta,
+                DesdeFecha.ToString("yyyyMMdd HH:mm:ss"),
+                HastaFecha.ToString("yyyyMMdd HH:mm:ss"),
+                TodosOPendientes, Comprobantes, Program.Pin));
+            dsTiposDeCobranza1.Merge(new Service().GetTiposDeCobranza(Program.Pin));
+            dsEntidadesDeCobranza1.Merge(new Service().GetEntidadesDeCobranza(Program.Pin));
+            dsCobradores.Merge(new Service().GetCobradores(Program.Pin));
+            dsZonas1.Merge(new Service().GetZonas(Program.Pin));
+            crListadoComprobantesAlfabetico1.SetDataSource(dsReportComprobantes1);
+
+            AgregarParametro("Periodo", Periodo);
+
+            string tipoDeCobranza;
+            var tipoCob = dsTiposDeCobranza1.TiposDeCobranza.FindByidTipoDeCobranza(IdTipoDeCobranza);
+            tipoDeCobranza = tipoCob != null ? tipoCob.Nombre : "Todos";
+            AgregarParametro("TipoDeCobranza", tipoDeCobranza);
+
+            string entidadDeCobranza;
+            var entidad = dsEntidadesDeCobranza1.EntidadesDeCobranza.FindByidEntidadDeCobranza(IdEntidadDeCobranza);
+            entidadDeCobranza = entidad != null ? entidad.Nombre : "Todas";
+            AgregarParametro("EntidadDeCobranza", entidadDeCobranza);
+
+            string cobrador;
+            var cobra = dsCobradores.EmpleadosLista.FindByidEmpleado(IdCobrador);
+            cobrador = cobra != null ? cobra.NombApel : "Todos";
+            AgregarParametro("Cobrador", cobrador);
+
+            var prefijo1 = Prefijo == "" ? "Todos" : Prefijo;
+            AgregarParametro("Prefijo", prefijo1);
+
+            string zona;
+            var zon = dsZonas1.Zonas.FindByidZona(IdZona);
+            zona = zon != null ? zon.Nombre : "Todas";
+            AgregarParametro("Zona", zona);
+
+            var desde1 = Desde == "" ? "Todos" : Desde;
+            AgregarParametro("Desde", desde1);
+
+            var hasta1 = Hasta == "" ? "Todos" : Hasta;
+            AgregarParametro("Hasta", hasta1);
+
+            var todosOPendientes1 = TodosOPendientes == "T" ? "Pendientes y Pagos" : "Sólo los Pendientes";
+            AgregarParametro("TodosOPendientes", todosOPendientes1);
+        }
+
+        private void AgregarParametro(string nombreParametro, string valorParametro)
+        {
+            _crParameterFieldLocation = _crParameterFieldDefinitions[nombreParametro];
+            _crParameterValues = _crParameterFieldLocation.CurrentValues;
+            _crParameterDiscreteValue = new ParameterDiscreteValue {Value = valorParametro};
+            _crParameterValues.Add(_crParameterDiscreteValue);
+            _crParameterFieldLocation.ApplyCurrentValues(_crParameterValues);
+        }
+    }
+}

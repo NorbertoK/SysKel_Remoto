@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://tempuri.org/DS_DescuentosGrupoNumeroso.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:mstns="http://tempuri.org/DS_DescuentosGrupoNumeroso.xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://tempuri.org/DS_DescuentosGrupoNumeroso.xsd" id="DsDescuentosGrupoNumeroso" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="DsDescuentosGrupoNumeroso">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DescuentosGrupoNumeroso">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idDescuentoGrupoNumeroso" type="xs:int" />
+              <xs:element name="idPlan" type="xs:int" />
+              <xs:element name="Afiliados" type="xs:int" />
+              <xs:element name="Descuento" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="Constraint1">
+      <xs:selector xpath=".//mstns:DescuentosGrupoNumeroso" />
+      <xs:field xpath="mstns:idDescuentoGrupoNumeroso" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

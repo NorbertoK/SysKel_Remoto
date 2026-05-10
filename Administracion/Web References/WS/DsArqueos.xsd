@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:mstns="http://tempuri.org/DsArqueos.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns="http://tempuri.org/DsArqueos.xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://tempuri.org/DsArqueos.xsd" id="DsArqueos" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="DsArqueos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Arqueos">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idArqueo" type="xs:int" />
+              <xs:element name="idCobrador" type="xs:int" />
+              <xs:element name="Fecha" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="Periodo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="CierreDelPeriodo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Total" type="xs:decimal" />
+              <xs:element name="Faltante" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ComprobantesArqueos">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="idComprobanteArqueo" type="xs:int" />
+              <xs:element name="idArqueo" type="xs:int" />
+              <xs:element name="idComprobante" type="xs:int" />
+              <xs:element minOccurs="0" name="Faltante" type="xs:boolean" />
+              <xs:element minOccurs="0" name="idMotivoDevolucionCobranza" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="Constraint1">
+      <xs:selector xpath=".//mstns:Arqueos" />
+      <xs:field xpath="mstns:idArqueo" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="ComprobantesArqueos_Constraint1">
+      <xs:selector xpath=".//mstns:ComprobantesArqueos" />
+      <xs:field xpath="mstns:idComprobanteArqueo" />
+    </xs:unique>
+    <xs:keyref msdata:DeleteRule="None" name="FK_ComprobantesArqueos_Arqueos" refer="mstns:Constraint1">
+      <xs:selector xpath=".//mstns:ComprobantesArqueos" />
+      <xs:field xpath="mstns:idArqueo" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>

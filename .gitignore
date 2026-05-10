@@ -1,0 +1,37 @@
+# Carpetas de compilación
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.DotSettings.user
+
+# Archivos de log y temporales
+*.log
+*.tmp
+UpgradeLog.htm
+
+# NuGet
+packages/
+*.nupkg
+
+# Archivos de publicación
+app.publish/
+publish/
+
+# Archivos comprimidos (backups locales)
+*.zip
+
+# Instaladores y prerequisitos
+Prerequisitos/
+
+# Backups de base de datos
+doc/BackUp BdeD/
+
+# Windows
+desktop.ini
+Thumbs.db

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns="http://tempuri.org/DsEmpleados.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+           xmlns:mstns="http://tempuri.org/DsEmpleados.xsd" attributeFormDefault="qualified"
+           elementFormDefault="qualified" targetNamespace="http://tempuri.org/DsEmpleados.xsd" id="DsEmpleados"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="DsEmpleados">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Empleados">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1"
+                          msdata:AutoIncrementStep="-1" name="idEmpleado" type="xs:int" />
+              <xs:element minOccurs="0" name="Nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idPrestador" type="xs:int" />
+              <xs:element name="Activo" type="xs:boolean" />
+              <xs:element minOccurs="0" name="Iniciales" type="xs:string" />
+              <xs:element minOccurs="0" name="Apellido">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Cuenta" type="xs:int" />
+              <xs:element minOccurs="0" name="idBanco" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CargosEmpleados">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1"
+                          msdata:AutoIncrementStep="-1" name="idCargoEmpleado" type="xs:int" />
+              <xs:element name="idEmpleado" type="xs:int" />
+              <xs:element name="idCargo" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="Constraint1">
+      <xs:selector xpath=".//mstns:Empleados" />
+      <xs:field xpath="mstns:idEmpleado" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="CargosEmpleados_Constraint1">
+      <xs:selector xpath=".//mstns:CargosEmpleados" />
+      <xs:field xpath="mstns:idCargoEmpleado" />
+    </xs:unique>
+    <xs:keyref msdata:DeleteRule="None" name="FK_CargosEmpleados_Empleados" refer="mstns:Constraint1">
+      <xs:selector xpath=".//mstns:CargosEmpleados" />
+      <xs:field xpath="mstns:idEmpleado" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>

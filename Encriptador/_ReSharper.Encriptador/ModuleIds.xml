@@ -1,0 +1,4 @@
+<Modules>
+  <Module PersistentId="799021A7-2329-459C-B4B5-73765AC6EA30" ModuleId="Encriptador" />
+  <Module PersistentId="5ACFFFAD-5D40-4F0E-94EF-E267DA3F9E98" ModuleId="TripleDESEncriptor" />
+</Modules>
