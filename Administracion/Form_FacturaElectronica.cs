@@ -135,6 +135,8 @@ namespace Administracion
                 // =======================
                 // 2) ¿RECHAZADA?
                 // =======================
+                bool guardadoPorMiPyme = false;
+
                 if (solicitudCAE.Resultado == "R")
                 {
                     // Rechazo por régimen MiPyME (Ley 27.440) → código 10192
@@ -147,10 +149,10 @@ namespace Administracion
 
                     if (esMiPyme)
                     {
-                        // 2.a) Mapear AFIP normal → AFIP MiPyME + resolver idTipo interno
+                        // 2.a) Mapear AFIP normal → AFIP MiPyME + idTipo interno
                         int afipActual = (int)renglon["tipoCbte"];
-                        int afipMiPyme = MapearAfipMiPyme(afipActual); // A:1→201, B:6→204
-                        int idTipoMiPyme = ResolverIdTipoPorAfip(afipMiPyme, renglon);
+                        int afipMiPyme = MapearAfipMiPyme(afipActual);
+                        int idTipoMiPyme = MapearIdInternoMiPyme(afipActual);
 
                         // 2.b) Asegurar Fecha de Vencimiento de Pago (MiPyME la exige)
                         string fvp = renglon["fechaVencPago"].ToString();
@@ -213,8 +215,8 @@ namespace Administracion
                                 solicitudCAE.XmlRequest = p2[6];
                                 solicitudCAE.XmlResponse = p2[7];
                                 solicitudCAE.Error = ManejoDatos.CodePage(p2.Length > 8 ? p2[8] : "");
+                                solicitudCAE.TipoDeComprobante = NombreTipoMiPyme(afipActual);
 
-                                // Guardar con idTipoDeComprobante MiPyME
                                 new Service().GuardarCAE(
                                     (int)renglon["idComprobante"],
                                     solicitudCAE.CAE,
@@ -222,6 +224,7 @@ namespace Administracion
                                     solicitudCAE.NumeroDeComprobante,
                                     idTipoMiPyme,
                                     Program.Pin);
+                                guardadoPorMiPyme = true;
                             }
                             else
                             {
@@ -270,15 +273,17 @@ namespace Administracion
                 dsSolicitudesCAE.SolicitudesCAE.Rows.Add(solicitudCAE);
                 solicitudesCAEUltraGrid.Update();
 
-                // Guardar con el idTipoDeComprobante actual del renglon (primer intento aprobado)
-                int idTipoActual = ResolverIdTipoActualDesdeRenglon(renglon);
-                new Service().GuardarCAE(
-                    (int)renglon["idComprobante"],
-                    solicitudCAE.CAE,
-                    solicitudCAE.Vencimiento,
-                    solicitudCAE.NumeroDeComprobante,
-                    idTipoActual,
-                    Program.Pin);
+                if (!guardadoPorMiPyme)
+                {
+                    int idTipoActual = ResolverIdTipoActualDesdeRenglon(renglon);
+                    new Service().GuardarCAE(
+                        (int)renglon["idComprobante"],
+                        solicitudCAE.CAE,
+                        solicitudCAE.Vencimiento,
+                        solicitudCAE.NumeroDeComprobante,
+                        idTipoActual,
+                        Program.Pin);
+                }
 
                 var nombreArchivo = ProcesarPDF(solicitudCAE, renglon);
                 if (nombreArchivo == "PDF no generado.")
@@ -303,16 +308,18 @@ namespace Administracion
             return 0; // fallback: el SP puede validar y rechazar 0 si no corresponde
         }
 
-        private static int ResolverIdTipoPorAfip(int afip, DataRow renglon)
+        private static int MapearIdInternoMiPyme(int afipActual)
         {
-            // 1) Si el DataRow ya trae la columna específica (por ejemplo, idTipoMiPyme), úsala
-            if (renglon.Table.Columns.Contains("idTipoDeComprobanteMiPyme"))
-            {
-                try { return (int)renglon["idTipoDeComprobanteMiPyme"]; } catch { }
-            }
+            if (afipActual == 1) return 23; // Factura A → Factura MiPyME A (id 23, AFIP 201)
+            if (afipActual == 6) return 26; // Factura B → Factura MiPyME B (id 26, AFIP 204)
+            return 0;
+        }
 
-            int actual = ResolverIdTipoActualDesdeRenglon(renglon);
-            return actual != 0 ? actual : 0;
+        private static string NombreTipoMiPyme(int afipActual)
+        {
+            if (afipActual == 1) return "Factura MiPyME A";
+            if (afipActual == 6) return "Factura MiPyME B";
+            return "Factura MiPyME";
         }
 
         private void ProcesarEmail(DataRow renglon, WS.DsSolicitudesCAE.SolicitudesCAERow solicitudCAE,
