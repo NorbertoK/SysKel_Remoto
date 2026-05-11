@@ -157,7 +157,7 @@ namespace Administracion
                         // 2.b) Asegurar Fecha de Vencimiento de Pago (MiPyME la exige)
                         string fvp = renglon["fechaVencPago"].ToString();
                         if (string.IsNullOrWhiteSpace(fvp) || fvp.Length != 8)
-                            fvp = CalcularVencimientoPagoDefault(renglon["fechaCbte"].ToString(), 30, fvp);
+                            fvp = CalcularVencimientoPagoDefault(renglon["fechaCbte"].ToString(), 10, fvp);
 
                         // 2.c) Reintento con MiPyME (silencioso)
                         var respuesta2 = new Service().GetWsfEv1(
@@ -302,10 +302,13 @@ namespace Administracion
             try
             {
                 if (renglon.Table.Columns.Contains("idTipoDeComprobante"))
-                    return (int)renglon["idTipoDeComprobante"];
+                {
+                    var val = (int)renglon["idTipoDeComprobante"];
+                    if (val > 0) return val;
+                }
             }
             catch { /* ignore */ }
-            return 0; // fallback: el SP puede validar y rechazar 0 si no corresponde
+            return 0;
         }
 
         private static int MapearIdInternoMiPyme(int afipActual)
