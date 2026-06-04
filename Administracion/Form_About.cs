@@ -18,7 +18,12 @@ namespace Administracion
             if (ApplicationDeployment.IsNetworkDeployed)
                 labelVersion.Text = "Versión: " + ApplicationDeployment.CurrentDeployment.CurrentVersion;
             else
-                labelVersion.Text = "Versión: A definir.";
+            {
+                var v = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+                labelVersion.Text = v.Major == 0 && v.Minor == 0
+                    ? "Versión: A definir."
+                    : "Versión: " + v;
+            }
             if (!Program.TieneLicencia)
             {
                 labelLicencia.Text = "Licencia inválida";

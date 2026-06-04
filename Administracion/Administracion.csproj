@@ -28,7 +28,7 @@
     <TargetFrameworkProfile />
     <PublishUrl>C:\Users\nkeli\OneDrive\Documentos\CapasJujuy\Capa Cliente\administracion\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
+    <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -40,7 +40,7 @@
     <TargetCulture>es-AR</TargetCulture>
     <ProductName>Administración</ProductName>
     <PublisherName>SysKel</PublisherName>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>6.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
