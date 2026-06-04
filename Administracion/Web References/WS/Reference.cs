@@ -899,7 +899,7 @@ namespace Administracion.WS {
         
         /// <remarks/>
         public Service() {
-            this.Url = global::Administracion.Properties.Settings.Default.Administración_WS_Service;
+            this.Url = global::Administracion.Properties.Settings.Default.Administracion_WS_Service;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;
