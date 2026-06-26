@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SysKel Key"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="32dp"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Empresa"
+        android:textSize="14sp"
+        android:layout_marginBottom="4dp" />
+
+    <Spinner
+        android:id="@+id/spinnerEmpresa"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="16dp"
+        android:entries="@array/empresas" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Vigencia hasta la medianoche del"
+        android:textSize="14sp"
+        android:layout_marginBottom="4dp" />
+
+    <Button
+        android:id="@+id/btnFecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        style="@style/Widget.Material3.Button.TonalButton" />
+
+    <Button
+        android:id="@+id/btnGenerar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Generar clave"
+        android:layout_marginBottom="24dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Clave generada">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtClave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:editable="false"
+            android:focusable="true"
+            android:textIsSelectable="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnCopiar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Copiar al portapapeles"
+        android:visibility="gone"
+        android:layout_marginTop="12dp"
+        style="@style/Widget.Material3.Button.OutlinedButton" />
+
+</LinearLayout>
