@@ -30,6 +30,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: SysKelKey-APK
-          path: |
-            SysKelKey/app/build/outputs/apk/debug/app-debug.apk
-            SysKelKey/app/build/outputs/apk/release/app-release-unsigned.apk
+          path: SysKelKey/app/build/outputs/apk/debug/app-debug.apk
