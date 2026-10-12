@@ -18,7 +18,6 @@ namespace Administracion
 
         private void ButtonAceptarClick(object sender, EventArgs e)
         {
-            Hide();
             buttonAceptar.Enabled = false;
             buttonCancelar.Enabled = false;
             _pass = GenerarClaveSha1(txtContrasena.Text);
@@ -26,11 +25,13 @@ namespace Administracion
             {
                 Program.Usu = txtUsuario.Text;
                 Program.Pass = _pass;
+                Hide();
                 DialogResult = DialogResult.OK;
             }
             else
             {
-                DialogResult = DialogResult.No;
+                buttonAceptar.Enabled = true;
+                buttonCancelar.Enabled = true;
             }
         }
 
@@ -39,7 +40,18 @@ namespace Administracion
             if (txtUsuario.Text == "NKelijman" &&
                 GenerarClaveSha1(txtContrasena.Text) == "DD278AA503CF7003BAC4A1CB8640AA3774BA43A0")
                 return true;
-            Program.IdUsuario = new Service().ValidarLogin(txtUsuario.Text, _pass, Program.Pin);
+            try
+            {
+                var svc = new Service { Timeout = 5000 };
+                Program.IdUsuario = svc.ValidarLogin(txtUsuario.Text, _pass, Program.Pin);
+            }
+            catch
+            {
+                MessageBox.Show("No se pudo conectar con el servidor." + Environment.NewLine +
+                    "Verifique la red e intente nuevamente.", "Error de conexión",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             return Program.IdUsuario != 0;
         }
 

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Data;
 using System.Globalization;
+using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -26,6 +27,7 @@ namespace Administracion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            ConfigurarServidor();
             var frmLogin = new FormLogin();
             if (frmLogin.ShowDialog() == DialogResult.OK)
             {
@@ -36,6 +38,45 @@ namespace Administracion
             {
                 var noTeRegistro = new FormNoTeRegistro();
                 noTeRegistro.ShowDialog();
+            }
+        }
+
+        // Elige la URL del servicio web según la máquina:
+        // si hay un SysKel respondiendo en el IIS local (laptop de desarrollo o el propio servidor) usa localhost;
+        // si no, usa el servidor de la empresa.
+        private static void ConfigurarServidor()
+        {
+            string url;
+            if (ServicioResponde(Settings.Default.Local_Service))
+                url = Settings.Default.Local_Service;
+            else
+                switch (Settings.Default.Empresa)
+                {
+                    case "SAE":
+                        url = Settings.Default.SAE_Jujuy;
+                        break;
+                    case "activa":
+                        url = Settings.Default.Bariloche;
+                        break;
+                    default:
+                        url = Settings.Default.Administracion_WS_Service;
+                        break;
+                }
+            Settings.Default["Administracion_WS_Service"] = url;
+        }
+
+        private static bool ServicioResponde(string url)
+        {
+            try
+            {
+                var request = WebRequest.Create(url);
+                request.Timeout = 2000;
+                using (var response = (HttpWebResponse) request.GetResponse())
+                    return response.StatusCode == HttpStatusCode.OK;
+            }
+            catch
+            {
+                return false;
             }
         }
     }
@@ -108,7 +149,9 @@ namespace Administracion
 
         public static bool TieneLicenciaVigente()
         {
-            var ahora = new Service().HoraActual(Program.Pin);
+            DateTime ahora;
+            try { ahora = new Service().HoraActual(Program.Pin); }
+            catch { ahora = DateTime.Now; }
             return Program.TieneLicencia && Program.VigenciaLicencia.AddDays(1) > ahora;
         }
     }

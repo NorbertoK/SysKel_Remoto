@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Data;
+using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using Cabina.Properties;
 using Cabina.WS;
 using Infragistics.Win.UltraWinGrid;
 
@@ -28,6 +30,7 @@ namespace Cabina
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            ConfigurarServidor();
             var frmLogin = new FormLogin();
             if (frmLogin.ShowDialog() == DialogResult.OK)
             {
@@ -38,6 +41,45 @@ namespace Cabina
             {
                 var noTeRegistro = new FormNoTeRegistro();
                 noTeRegistro.ShowDialog();
+            }
+        }
+
+        // Elige la URL del servicio web según la máquina:
+        // si hay un SysKel respondiendo en el IIS local (laptop de desarrollo o el propio servidor) usa localhost;
+        // si no, usa el servidor de la empresa.
+        private static void ConfigurarServidor()
+        {
+            string url;
+            if (ServicioResponde(Settings.Default.Local_Service))
+                url = Settings.Default.Local_Service;
+            else
+                switch (Settings.Default.Empresa)
+                {
+                    case "SAE":
+                        url = Settings.Default.SAE_Jujuy;
+                        break;
+                    case "activa":
+                        url = Settings.Default.Bariloche;
+                        break;
+                    default:
+                        url = Settings.Default.Cabina_WS_Service;
+                        break;
+                }
+            Settings.Default["Cabina_WS_Service"] = url;
+        }
+
+        private static bool ServicioResponde(string url)
+        {
+            try
+            {
+                var request = WebRequest.Create(url);
+                request.Timeout = 2000;
+                using (var response = (HttpWebResponse) request.GetResponse())
+                    return response.StatusCode == HttpStatusCode.OK;
+            }
+            catch
+            {
+                return false;
             }
         }
     }

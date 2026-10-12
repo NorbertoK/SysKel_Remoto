@@ -899,7 +899,7 @@ namespace Cabina.WS {
         
         /// <remarks/>
         public Service() {
-            this.Url = global::Cabina.Properties.Settings.Default.Cabina_AdministracionWS_Service;
+            this.Url = global::Cabina.Properties.Settings.Default.Cabina_WS_Service;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;

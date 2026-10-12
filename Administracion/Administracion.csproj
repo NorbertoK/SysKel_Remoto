@@ -14,7 +14,7 @@
     <ManifestKeyFile>Administración_11_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
     <TargetZone>LocalIntranet</TargetZone>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <ApplicationIcon>SK.ico</ApplicationIcon>
     <StartupObject>Administracion.Program</StartupObject>
@@ -40,8 +40,8 @@
     <TargetCulture>es-AR</TargetCulture>
     <ProductName>Administración</ProductName>
     <PublisherName>SysKel</PublisherName>
-    <ApplicationRevision>5</ApplicationRevision>
-    <ApplicationVersion>6.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>6.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>

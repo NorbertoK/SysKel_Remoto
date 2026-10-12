@@ -61,8 +61,12 @@ namespace Administracion
             //if (empresa == "SAE" && !File.Exists("c:\\MiCasa\\Estoy.txt"))
             if (empresa == "SAE")
             {
-                _autenticado = new Service().Autenticacion(Program.Pin);
-                _autenticadoWsfeCred = new Service().AutenticacionWsfeCred(Program.Pin);
+                try
+                {
+                    _autenticado = new Service().Autenticacion(Program.Pin);
+                    _autenticadoWsfeCred = new Service().AutenticacionWsfeCred(Program.Pin);
+                }
+                catch { _autenticado = "Error"; }
                 if (_autenticado != "OK")
                     MessageBox.Show(
                         "La autenticación con la AFIP falló." + Environment.NewLine + "No podrá pedir CAEs.", "AFIP",
@@ -74,8 +78,11 @@ namespace Administracion
                 //        "AFIP", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             backgroundWorker1.RunWorkerAsync();
+            DateTime horaActual;
+            try { horaActual = new Service().HoraActual(Program.Pin); }
+            catch { horaActual = DateTime.Now; }
             if (Program.TieneLicencia &&
-                (Program.VigenciaLicencia - new Service().HoraActual(Program.Pin)).Days >= 6)
+                (Program.VigenciaLicencia - horaActual).Days >= 6)
                 return;
             var formAbout = new FormAbout {StartPosition = FormStartPosition.CenterScreen};
             formAbout.ShowDialog();
@@ -124,6 +131,8 @@ namespace Administracion
         private void BackgroundWorker1DoWork(object sender, DoWorkEventArgs e)
         {
             if (!Encriptacion.TieneLicenciaVigente()) return;
+            try
+            {
             dsBarrios.Merge(new Service().GetBarriosLista(Program.Pin));
             backgroundWorker1.ReportProgress(1);
             dsCallesLista.Merge(new Service().GetCallesLista(Program.Pin));
@@ -177,6 +186,11 @@ namespace Administracion
             backgroundWorker1.ReportProgress(23);
             dsUsuariosLista.Merge(new Service().GetUsuariosLista(Program.Pin));
             backgroundWorker1.ReportProgress(24);
+            }
+            catch (Exception ex)
+            {
+                e.Result = ex;
+            }
         }
 
         private void BackgroundWorker1ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -186,6 +200,10 @@ namespace Administracion
 
         private void BackgroundWorker1RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            if (e.Result is Exception)
+                MessageBox.Show("No se pudo conectar con el servidor." + Environment.NewLine +
+                    "Verifique la red y reinicie SysKel.", "Error de conexión",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             //Comienzan las autorizaciones a los menúes.
             if (Encriptacion.TieneLicenciaVigente())
             {

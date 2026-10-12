@@ -12,7 +12,7 @@ namespace Cabina.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.14.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "18.10.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -47,10 +47,10 @@ namespace Cabina.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/SysKel/Service.asmx")]
-        public string Cabina_AdministracionWS_Service {
+        [global::System.Configuration.DefaultSettingValueAttribute("http://10.10.10.2/syskel/service.asmx")]
+        public string Cabina_WS_Service {
             get {
-                return ((string)(this["Cabina_AdministracionWS_Service"]));
+                return ((string)(this["Cabina_WS_Service"]));
             }
         }
         

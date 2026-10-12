@@ -8,8 +8,8 @@
     <Setting Name="Local_Service" Type="System.String" Scope="User">
       <Value Profile="(Default)">http://localhost/SysKel/Service.asmx</Value>
     </Setting>
-    <Setting Name="Cabina_AdministracionWS_Service" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://localhost/SysKel/Service.asmx</Value>
+    <Setting Name="Cabina_WS_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.10.10.2/syskel/service.asmx</Value>
     </Setting>
     <Setting Name="Bariloche" Type="System.String" Scope="User">
       <Value Profile="(Default)">http://192.168.5.101/syskel/service.asmx</Value>
