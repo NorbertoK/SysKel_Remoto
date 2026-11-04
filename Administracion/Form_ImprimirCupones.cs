@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using System.Drawing;
 using System.Windows.Forms;
 using Administracion.WS;
@@ -87,10 +88,10 @@ namespace Administracion
                 Prefijo = ultraComboPuntosDeVenta.Value == null ? "" : ultraComboPuntosDeVenta.Text,
                 IdZona = ultraComboZonas.Value == null ? 0 : (int) ultraComboZonas.Value,
                 DesdeFecha = ultraDateTimeEditorDesdeFecha.Value == null
-                    ? Convert.ToDateTime("21/01/1947")
+                    ? new DateTime(1947, 1, 21)
                     : (DateTime) ultraDateTimeEditorDesdeFecha.Value,
                 HastaFecha = ultraDateTimeEditorHastaFecha.Value == null
-                    ? Convert.ToDateTime("21/01/1947")
+                    ? new DateTime(1947, 1, 21)
                     : (DateTime) ultraDateTimeEditorHastaFecha.Value,
                 Desde = ultraMaskedEditDesde.Text,
                 Hasta = ultraMaskedEditHasta.Text,
@@ -112,7 +113,7 @@ namespace Administracion
                 Periodo =
                     ultraDateTimeEditorPeriodo.Value == null
                         ? ""
-                        : ultraDateTimeEditorPeriodo.Value.ToString().Substring(3, 7),
+                        : ((DateTime) ultraDateTimeEditorPeriodo.Value).ToString("MM/yyyy", CultureInfo.InvariantCulture),
                 IdTipoDeCobranza =
                     ultraComboTiposDeCobranza.Value == null ? 0 : (int) ultraComboTiposDeCobranza.Value,
                 IdEntidadDeCobranza =
@@ -121,10 +122,10 @@ namespace Administracion
                 Prefijo = ultraComboPuntosDeVenta.Value == null ? "" : ultraComboPuntosDeVenta.Text,
                 IdZona = ultraComboZonas.Value == null ? 0 : (int) ultraComboZonas.Value,
                 DesdeFecha = ultraDateTimeEditorDesdeFecha.Value == null
-                    ? Convert.ToDateTime("21/01/1947")
+                    ? new DateTime(1947, 1, 21)
                     : (DateTime) ultraDateTimeEditorDesdeFecha.Value,
                 HastaFecha = ultraDateTimeEditorHastaFecha.Value == null
-                    ? Convert.ToDateTime("21/01/1947")
+                    ? new DateTime(1947, 1, 21)
                     : (DateTime) ultraDateTimeEditorHastaFecha.Value,
                 Desde = ultraMaskedEditDesde.Text,
                 Hasta = ultraMaskedEditHasta.Text,
@@ -144,7 +145,7 @@ namespace Administracion
                 Periodo =
                     ultraDateTimeEditorPeriodo.Value == null
                         ? ""
-                        : ultraDateTimeEditorPeriodo.Value.ToString().Substring(3, 7),
+                        : ((DateTime) ultraDateTimeEditorPeriodo.Value).ToString("MM/yyyy", CultureInfo.InvariantCulture),
                 IdTipoDeCobranza =
                     ultraComboTiposDeCobranza.Value == null ? 0 : (int) ultraComboTiposDeCobranza.Value,
                 IdEntidadDeCobranza =
@@ -153,10 +154,10 @@ namespace Administracion
                 Prefijo = ultraComboPuntosDeVenta.Value == null ? "" : ultraComboPuntosDeVenta.Text,
                 IdZona = ultraComboZonas.Value == null ? 0 : (int) ultraComboZonas.Value,
                 DesdeFecha = ultraDateTimeEditorDesdeFecha.Value == null
-                    ? Convert.ToDateTime("21/01/1947")
+                    ? new DateTime(1947, 1, 21)
                     : (DateTime) ultraDateTimeEditorDesdeFecha.Value,
                 HastaFecha = ultraDateTimeEditorHastaFecha.Value == null
-                    ? Convert.ToDateTime("21/01/1947")
+                    ? new DateTime(1947, 1, 21)
                     : (DateTime) ultraDateTimeEditorHastaFecha.Value,
                 Desde = ultraMaskedEditDesde.Text,
                 Hasta = ultraMaskedEditHasta.Text,

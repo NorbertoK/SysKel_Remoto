@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using Administracion.WS;
 
 namespace Administracion
@@ -23,10 +24,10 @@ namespace Administracion
         {
             buttonAceptar.Visible = false;
             buttonCancelar.Visible = false;
-            var fecha1 = ultraDateTimeEditorPeriodo.Value.ToString().Substring(6, 4) +
-                         ultraDateTimeEditorPeriodo.Value.ToString().Substring(3, 2) +
-                         "01";
-            var periodo1 = ultraDateTimeEditorPeriodo.Value.ToString().Substring(3, 7);
+            // Formato fijo, independiente de la configuraciÃ³n regional de Windows.
+            var periodo = (DateTime) ultraDateTimeEditorPeriodo.Value;
+            var fecha1 = periodo.ToString("yyyyMM", CultureInfo.InvariantCulture) + "01";
+            var periodo1 = periodo.ToString("MM/yyyy", CultureInfo.InvariantCulture);
             var idTandaDeFacturacion1 =
                 (int) ultraComboTandasDeFacturacion.SelectedRow.Cells["idTandaDeFacturacion"].Value;
             ultraLabelMensaje.Text = "Espere, por favor...";
@@ -53,7 +54,7 @@ namespace Administracion
 
         private void ButtonAplicarClick(object sender, EventArgs e)
         {
-            // Es el botón Salir.
+            // Es el botï¿½n Salir.
             Close();
         }
 

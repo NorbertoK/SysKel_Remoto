@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using System.Drawing;
 using System.Windows.Forms;
 using Administracion.WS;
@@ -28,7 +29,7 @@ namespace Administracion
             ultraLabelMensaje.Text = "Espere, por favor...";
             ultraLabelMensaje.Update();
             ultraDateTimeEditorPeriodo.Enabled = false;
-            var periodo1 = ultraDateTimeEditorPeriodo.Value.ToString().Substring(3, 7);
+            var periodo1 = ((DateTime) ultraDateTimeEditorPeriodo.Value).ToString("MM/yyyy", CultureInfo.InvariantCulture);
             var proceso = new Service().GetProceso(Program.Pin);
             var aux = new Service {Timeout = 60 * 60 * 1000};
             var cantidadBajas = aux.CantidadDeBajasAutomaticas(periodo1, Program.IdUsuario, proceso, Program.Pin);

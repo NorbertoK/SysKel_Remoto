@@ -73,7 +73,9 @@ namespace Cabina
             try
             {
                 var request = WebRequest.Create(url);
-                request.Timeout = 2000;
+                // Generoso: la primera llamada a un IIS recién arrancado tarda varios segundos.
+                // Donde no hay IIS local la conexión se rechaza al instante, así que no demora.
+                request.Timeout = 15000;
                 using (var response = (HttpWebResponse) request.GetResponse())
                     return response.StatusCode == HttpStatusCode.OK;
             }

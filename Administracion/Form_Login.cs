@@ -42,13 +42,15 @@ namespace Administracion
                 return true;
             try
             {
-                var svc = new Service { Timeout = 5000 };
+                // La primera llamada después de que IIS recicla el sitio tarda bastante más de 5 segundos.
+                var svc = new Service { Timeout = 30000 };
                 Program.IdUsuario = svc.ValidarLogin(txtUsuario.Text, _pass, Program.Pin);
             }
-            catch
+            catch (Exception ex)
             {
                 MessageBox.Show("No se pudo conectar con el servidor." + Environment.NewLine +
-                    "Verifique la red e intente nuevamente.", "Error de conexión",
+                    "Verifique la red e intente nuevamente." + Environment.NewLine + Environment.NewLine +
+                    Settings.Default.Administracion_WS_Service + Environment.NewLine + ex.Message, "Error de conexión",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }

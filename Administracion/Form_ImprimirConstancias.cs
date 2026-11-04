@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Drawing;
 using System.Windows.Forms;
 using Administracion.WS;
@@ -69,7 +70,7 @@ namespace Administracion
             var frm = new FormRepConstanciasDeAfiliacion
             {
                 MdiParent = MdiParent,
-                Periodo = ultraDateTimeEditorPeriodo.Value.ToString().Substring(3, 7)
+                Periodo = ((DateTime) ultraDateTimeEditorPeriodo.Value).ToString("MM/yyyy", CultureInfo.InvariantCulture)
             };
             if (ultraComboClientes.Value == null)
                 frm.IdCliente = 0;
